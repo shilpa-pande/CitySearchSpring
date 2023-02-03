@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="admin/base::Layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+ <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3" id="formpostclassified">
+                <h1 class="font-weight-bold"  style="color:red;text-align:center;padding:20px ;background-color:blue;text-shadow: 2px 2px 4px rgb(255, 255, 255);">Post Information</h1><hr>
+                <form class="form-horizontal" th:action="@{/admin/process_adminpostclassified}" method="post">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="name">Name:</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" pattern="[a-zA-Z][a-zA-Z ]{1,}"required>
+                        </div>
+                      </div><br>
+                       <div class="form-group">
+                            <label class="control-label col-sm-3" for="category">Category:</label>
+                            <div class="col-sm-8">
+                            <select class="form-control" id="category" name="category" required>
+                            <option value="">None</option>
+                              <option value="shopping malls">Shopping Malls</option>
+                              <option value="colleges">Colleges</option>
+                              <option value="school">School</option>
+                              <option value="hospital">Hospital</option>
+                               <option value="bank">BANK</option>
+                                <option value="atm">ATM</option>
+                                 <option value="company">COMPANY</option>
+                            </select>
+                            </div>
+                    </div><br>
+                    <div class="form-group">
+                      <label class="control-label col-sm-3" for="email">Email:</label>
+                      <div class="col-sm-8">
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required>
+                      </div>
+                    </div><br>
+                      <div class="form-group">
+                      <label class="control-label col-sm-3" for="pwd">Address:</label>
+                      <div class="col-sm-8">          
+                        <input type="text" class="form-control" id="address" placeholder="Enter address" name="address" required>
+                      </div>
+                    </div><br>
+                         <div class="form-group">
+                      <label class="control-label col-sm-3" for="city">City:</label>
+                      <div class="col-sm-8">          
+                        <input type="text" class="form-control" id="city" placeholder="Enter city" name="city" required>
+                      </div>
+                    </div><br>
+                    <div class="form-group">
+                      <label class="control-label col-sm-3" for="email">Contact Number:</label>
+                      <div class="col-sm-8">
+                        <input type="number" class="form-control" id="contact" placeholder="Enter Contact no"   title="number should be enter in 10 digits" name="contact" required>
+                      </div>
+                    </div><br>
+                  
+               
+                    <div class="form-group">        
+                      <div class="col-sm-offset-3 col-sm-8">
+                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                      </div>
+                    </div>
+                    <hr>
+                </form>
+                
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

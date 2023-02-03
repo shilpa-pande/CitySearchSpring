@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normaluser/base::Layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>city User Dashboard</title>
+</head>
+<body>
+
+<section>
+<h1 class="font-weight-bold"  style="color:red;text-align:center;padding:20px ;background-color:blue;text-shadow: 2px 2px 4px rgb(255, 255, 255);">Welcome    <span th:text="${cityuser.name}"></span></h1>
+<h1 class="font-weight-bold"  style="color:red;text-align:center;padding:20px ;background-color:blue;text-shadow: 2px 2px 4px rgb(255, 255, 255);">User Email:  <span th:text="${cityuser.email}"></span></h1>
+</section>
+
+</body>
+</html>

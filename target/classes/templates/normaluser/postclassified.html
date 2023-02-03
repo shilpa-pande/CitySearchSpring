@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normaluser/base::Layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>city User Dashboard</title>
+</head>
+<body>
+<section>
+	<div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3" id="formpostclassified">
+                <h1 class="font-weight-bold"  style="color:red;text-align:center;padding:20px ;background-color:blue;text-shadow: 2px 2px 4px #000000;">POST CLASSIFIED</h1><hr>
+                <form class="form-horizontal" th:action="@{/cityuser/process_postclassified}"  method="post">
+                  <div class="form-group">
+                            <label class="control-label col-sm-3" for="category">Select Category:</label>
+                            <div class="col-sm-8">
+                            	<select class="form-control"  name="buysell" id="buysell" required>
+                            		<option value="">NONE</option>
+                              		<option value="buy">BUY</option>
+                              		<option value="sell">SELL</option>
+                            	</select>
+                            </div>
+                    </div><br>
+                
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="name">Name:</label>
+                        	<div class="col-sm-8">
+                          		<input type="text" class="form-control"  placeholder="Enter Name" name="name" pattern="[a-zA-Z][a-zA-Z ]{1,}" required>
+                        	</div>
+                      </div><br>
+                      <div class="form-group">
+                    	 	<label  class="control-label col-sm-3" for="description">Description</label>
+                     		<div class="shadow-textarea col-sm-8">
+  							<textarea class="form-control z-depth-1" rows="10" placeholder="Write your description here..." name="description" required></textarea>
+					</div>
+                    </div><br>
+                    <div class="form-group">        
+                      <div class="col-sm-offset-3 col-sm-8">
+                        <button type="submit" class="btn btn-primary btn-block">POST FEED</button>
+                      </div>
+                    </div>
+                    <hr>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

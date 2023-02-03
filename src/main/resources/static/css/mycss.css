@@ -1,0 +1,68 @@
+
+    body{
+        background-image: url("/images/img5.jpg");
+        background-size: cover;
+        
+       
+    }
+   
+    #nav1{
+    	
+    	background-color:success;
+    	
+    }
+    
+    #form{
+    
+   
+        border: 3px solid rgb(151, 9, 9);
+        min-height: 600px;
+        border-radius: 3%;
+        margin-top: 80px;
+        color: blue;
+       
+      
+    }
+
+    footer {
+      
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+    border:2px solid white;
+}
+#formpostclassified{
+	background-color:white;
+	  border: 3px solid rgb(151, 9, 9);
+        min-height: 600px;
+        border-radius: 3%;
+        margin-top: 80px;
+        color: blue;
+	
+	
+}
+#viewc{
+	background-color:white;
+}
+#indexheading{
+	color:white;
+	
+}
+
+#page {
+	
+	width: 940px;
+	margin: 0px auto;
+	padding: 30px 30px;
+	background: #FFFFFF;
+	border: 1px solid #D4D4D4;
+}
+#col1{
+	background-color:white;
+	padding:10px;
+	margin:none;
+}
+#mytab{
+	background-color:white;
+}

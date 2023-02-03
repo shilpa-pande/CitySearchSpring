@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::Layout(~{::section})">
+<head>
+
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<section class="registerbanner justify-content-center align-items-center">
+
+<div class="container">
+
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3" id="formpostclassified">
+           
+                <h1 class="font-weight-bold"  style="color:red;text-align:center;padding:20px ;background-color:blue;text-shadow: 2px 2px 4px rgb(255, 255, 255);">Registration Form</h1><hr>
+                <form class="form-horizontal" th:action="@{/process_register}"  method="post" th:object="${cityuser}">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="name">Name:</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control"  placeholder="Enter Name" name="name" required>
+                        </div>
+                      </div><br>
+                      <div class="form-group">
+                      <label class="control-label col-sm-3" for="pwd">Password:</label>
+                      <div class="col-sm-8">          
+                        <input type="password" class="form-control"  placeholder="Enter password" name="password"   required>
+                      </div>
+                    </div><br>
+                    <div class="form-group">
+                      <label class="control-label col-sm-3" for="email">Email:</label>
+                      <div class="col-sm-8">
+                        <input type="email" class="form-control"  placeholder="Enter email" name="email" required >
+                      </div>
+                    </div><br>
+                         <div class="form-group">
+                      <label class="control-label col-sm-3" for="pwd">Address:</label>
+                      <div class="col-sm-8">          
+                        <input type="text" class="form-control"  placeholder="Enter address" name="address" required>
+                      </div>
+                    </div><br>
+                    <div class="form-group">
+                            <label class="control-label col-sm-3" for="country">Select City:</label>
+                            <div class="col-sm-8">
+                            <select class="form-control"  name="country" required>
+                             <option value="">None</option>
+                              <option value="ddun">Dehradun</option>
+                              <option value="gurgaon">Gurgaon</option>
+                              <option value="delhi">Delhi</option>
+                              <option value="mumbai">Mumbai</option>
+                               <option value="chennai">Chennai</option>
+                                   <option value="raipur">Raipur</option>
+                            </select>
+                            </div>
+                    </div><br>
+                        <div class="form-group">
+                      <label class="control-label col-sm-3" for="contact">Contact Number:</label>
+                      <div class="col-sm-8">
+                        <input type="number" class="form-control" placeholder="Enter Contact no"   name="contact"required>
+                      </div>
+                    </div><br>
+                         <div class="form-group">
+                            <label class="control-label col-sm-3" for="role">Select Role:</label>
+                            <div class="col-sm-8">
+                            <select class="form-control"  name="role" required>
+                              <option>ROLE_USER</option>
+                              <option>ROLE_ADMIN</option>
+                            
+                            </select>
+                            </div>
+                    </div><br>
+                    
+                    <div class="form-group">        
+                      <div class="col-sm-offset-3 col-sm-8">
+                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                      </div>
+                    </div>
+                    <hr>
+                </form>
+                
+
+            </div>
+
+        </div>
+
+    </div>
+  
+</section>
+
+</body>
+</html>

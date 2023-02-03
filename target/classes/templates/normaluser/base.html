@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="Layout(content)">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link th:href="@{/css/mycss.css}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<title th:text="${title}">Base Html</title>
+</head>
+<body>
+
+<section>
+<div class="header">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  	<span class="icon-bar"></span>
+                  	<span class="icon-bar"></span>
+                  	<span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">MyFirstWebsite</a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#" class="fas fa-home">Home</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                  <li><a th:href="@{/cityuser/postclassified}"><span class="fas fa-pencil-alt"></span>POST CLASSIFIED</a></li>
+                  
+                </ul>
+                    <ul class="nav navbar-nav">
+                  <li><a th:href="@{/cityuser/viewclassifieds/0}"><span class="fas fa-id-card-alt"></span>VIEW CLASSIFIED</a></li>
+                </ul>
+                    <ul class="nav navbar-nav">
+                   <li><a th:href="@{/logout}"><span class="fas fa-sign-out-alt"></span>LOGOUT</a></li>
+                </ul>
+                 <ul class="nav navbar-nav">
+                 	<li class="nav-item"><a class="nav-link" href="#"><span class="btn btn-success "  th:text="${cityuser.name}"></span></a></li>
+				
+                </ul>
+              </div>
+            </div>
+      </nav>
+</div>
+  
+  
+<!-- message box -->
+		<div th:if="${session.message}" class="container">
+			<div th:classappend="${'alert-'+session.message.type}" class="alert text-center" role="alert">
+ 				 <span th:text="${session.message.content}"></span>
+			</div>
+			<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+		</div>
+
+
+<div th:replace="${content}"></div>
+	
+	
+	   <div class="footer">
+       
+                <div class="navbar navbar-inverse navbar-fixed-bottom">
+                    <div class="container">
+                    <p class="navbar-text">©SHILPA PANDEY</p>
+                    <h1>My Footer</h1>
+                	</div>
+                
+        
+            </div>
+       
+    </div>
+
+</section>
+
+</body>
+</html>

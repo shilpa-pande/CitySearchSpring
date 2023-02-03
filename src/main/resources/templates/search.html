@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Welcome to CitySearch Home</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<body>
+
+	<section>
+		<div class="container" id="viewc">
+<h1 class="font-weight-bold"  style="color:red;text-align:center;padding:50px ;background-color:blue;text-shadow: 2px 2px 4px rgb(255, 255, 255);">WELCOME TO OUR WEBSITE SEARCH CITY-WISE AND CATEGORY-WISE DATA</h1><hr>
+	<form th:action="@{/search}">
+	<div class="form-group">
+    <label class="control-label col-sm-1" for="name">SEARCH:</label>
+	<div class="col-sm-5">
+     <input type="text" name="keyword"  class="form-control" id="keyword" size="50" th:value="${keyword}" required />
+    	</div>
+    	</div>
+   		 &nbsp;
+    	<input type="submit" class="btn btn-primary" value="Search" />
+   	 &nbsp;
+    	<input type="button" class="btn btn-danger" value="Clear" id="btnClear" onclick="clearSearch()" />
+	</form><br>
+ 		<table class="table table-hover"> 
+
+			
+ 			<tbody><tr th:each="poster: ${listPosters}"><td th:text="${poster.id}">ID</td><td th:text="${poster.name}">NAME</td><td th:text="${poster.category}">CATEGORY</td><td th:text="${poster.email}">EMAIL</td><td th:text="${poster.address}">ADDRESS</td><td th:text="${poster.city}">CITY</td><td th:text="${poster.contact}">Contact</td></tr></tbody> 
+ 		</table>  
+	</div>
+
+
+	</section>
+</body>
+</html>

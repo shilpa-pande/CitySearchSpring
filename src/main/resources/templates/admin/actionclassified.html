@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="admin/base::Layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+
+	<div class="container">
+	<div id="viewc">
+	<h1 class="font-weight-bold"  style="color:red;text-align:center;padding:20px ;background-color:blue;text-shadow: 2px 2px 4px rgb(255, 255, 255);">LIST OF POSTCLASSIFIED POST BY ADMIN</h1>
+		<table class="table table-hover">
+		
+			<thead><tr><th>ID</th><th>NAME</th><th>CATEGORY</th><th>EMAIL</th><th>ADDRESS</th><th>CITY</th><th>CONTACT</th><th>Action</th></tr></thead>
+			
+			<tbody>
+			<tr th:each="poster: ${listPosters}">
+			<td th:text="${poster.id}">ID</td>
+			<td th:text="${poster.name}">NAME</td>
+			<td th:text="${poster.category}">CATEGORY</td>
+			<td th:text="${poster.email}">EMAIL</td>
+			<td th:text="${poster.address}">ADDRESS</td>
+			<td th:text="${poster.city}">CITY</td>
+			<td th:text="${poster.contact}">CONTACT</td>
+			<td ><a th:href="@{'/admin/delete/'+${poster.id}}"  class="btn btn-danger btn-sm">DELETE</a><br><br>
+			<form method="post" th:action="@{'/admin/update/'+${poster.id}}" >
+			<button type="submit" class="btn btn-primary btn-sm">EDIT</button>
+			</form>
+			</td>
+			</tr>
+			</tbody> 
+		</table> 
+		
+		<nav aria-label="Page navigation example">
+		<ul class="pagination">
+		<li th:if="${currentPage !=0}" class="page-item"><a th:href="@{'/admin/actionclassified/'+${currentPage-1}}" class="page-link" href="#">Previous</a></li>
+		<li th:classappend="${currentPage==i-1?'active':''}"  th:each="i: ${#numbers.sequence(1,totalPages)}" class="page-item"><a th:href="@{'/admin/actionclassified/'+${i-1}}" class="page-link" href="#"><span th:text="${i}"></span></a></li>
+		<li th:if="${currentPage+1!=totalPages}" class="page-item"><a th:href="@{'/admin/actionclassified/'+${currentPage+1}}" class="page-link" href="#">next</a></li>
+		
+		</ul>
+		</nav>
+	</div>
+	</div>
+
+
+</section>
+
+</body>
+</html>
